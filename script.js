@@ -56,39 +56,66 @@ console.log(`/* ------------------ Part 2: Prime Time ------------------ */`);
     Test your loop with higher numbers and reference an online prime number table to determine the accuracy of your code.
     Be careful! If you set n to a number too large, your loop could take a long time to process.*/
 
-let n = 5;
-let nplus = n + 1;
-while(n > 1){
+
+// intialize variables for later use in the while loop
+// let n = 2;
+// let nplus = n + 1;
+
+// // iterate via while loop while n > 1 condition stands 
+// outerloop:while(n > 1){
     
-    if(n === 2 || n === 3){
-        console.log(`${n} is prime too`);
+//     // check if the given n value is either 2 or 3 as they would classify as prime
+//     if(n === 2 || n === 3){
+//         // indicate n as a prime
+//         console.log(`${n} is prime too`);
+//     }
+
+
+//     // inspired from class material
+//     if(n % 2 !== 0 && n % 3 !== 0){
+//         console.log(`${n} is prime`);
+
+//         if(n > 3){
+//             innerloop:while(nplus > n){
+//                 if(nplus % 2 !== 0 && nplus % 3 !== 0){
+//                     console.log(`${nplus} is prime`);
+//                     break innerloop;
+//                 }
+//                 nplus++;
+//             }
+//         }
+    
+//         break outerloop;
+//     }
+//     n++;
+// }
+
+let n = 76;
+
+
+while(n > 0){
+    let nplus = n + 1;
+    if(nplus === 2 || nplus == 3){
+        console.log(`${nplus} isA prime`)
+        break;
     }
-    else if(n % 2 !== 0 && n % 3 !== 0){
-        console.log(`${n} is prime`);
-        nplus++;
+    else if(nplus % 2 != 0 && nplus % 3 !== 0 && nplus % 5){
+        console.log(`${nplus} isB prime`);
+        break;
     }
     n++;
 }
-
-
-// while(nplus > 0){
-//     if(nplus % 2 != 0 && nplus % 3 !== 0){
-//         console.log(`${nplus} is prime`);
-//         break;
-//     }
-//     nplus++;
-// }
 
 // for(let n = 4; n > 1; n++){
 //     if(n % 2 !== 0 && n % 3 !== 0){
 //         console.log(`${n} is prime`);
 //     }
-//     else if(n === 2 || n == 3){
+//     if(n === 2 || n == 3){
 //         console.log(`${n} is prime as well`);
 //     }
-//     else{
-//         console.log(`${n} is not prime`);
-//     }
+//     // else{
+//     //     console.log(`${n} is not prime`);
+//     // }
 //     break;
 
 // }
