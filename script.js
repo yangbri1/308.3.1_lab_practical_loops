@@ -57,65 +57,35 @@ console.log(`/* ------------------ Part 2: Prime Time ------------------ */`);
     Be careful! If you set n to a number too large, your loop could take a long time to process.*/
 
 
-// intialize variables for later use in the while loop
-// let n = 2;
-// let nplus = n + 1;
+// intialize variable for later use in the while loop
+let n = 3;
 
-// // iterate via while loop while n > 1 condition stands 
-// outerloop:while(n > 1){
-    
-//     // check if the given n value is either 2 or 3 as they would classify as prime
-//     if(n === 2 || n === 3){
-//         // indicate n as a prime
-//         console.log(`${n} is prime too`);
-//     }
-
-
-//     // inspired from class material
-//     if(n % 2 !== 0 && n % 3 !== 0){
-//         console.log(`${n} is prime`);
-
-//         if(n > 3){
-//             innerloop:while(nplus > n){
-//                 if(nplus % 2 !== 0 && nplus % 3 !== 0){
-//                     console.log(`${nplus} is prime`);
-//                     break innerloop;
-//                 }
-//                 nplus++;
-//             }
-//         }
-    
-//         break outerloop;
-//     }
-//     n++;
-// }
-
-let n = 76;
-
-
+// iterate via loop as long as the integer is non-negative 
 while(n > 0){
+
+    // declare 'nplus' variable to check on closest number above 'n'
     let nplus = n + 1;
+
+    // if n is integers 2 or 3
     if(nplus === 2 || nplus == 3){
-        console.log(`${nplus} isA prime`)
+        // logs out it's a prime
+        console.log(`${nplus} isA prime`);
+        // breaks out out whole loop completely -- next iteration DN start
         break;
     }
-    else if(nplus % 2 != 0 && nplus % 3 !== 0 && nplus % 5){
+    // if n is a multiple of 2, 3, 5, 7, ... 11, 13, 17, 19, 23, ... (prime)
+    else if((nplus % 2 != 0) && (nplus % 3 !== 0) && (nplus % 5 !== 0) && (nplus % 7 !== 0)){
+        // log out confirming n is a prime
         console.log(`${nplus} isB prime`);
+        // break current iteration 
         break;
+    
     }
+    // increment up by 1 if neither of the if cases are hit
     n++;
-}
 
-// for(let n = 4; n > 1; n++){
-//     if(n % 2 !== 0 && n % 3 !== 0){
-//         console.log(`${n} is prime`);
-//     }
-//     if(n === 2 || n == 3){
-//         console.log(`${n} is prime as well`);
-//     }
-//     // else{
-//     //     console.log(`${n} is not prime`);
-//     // }
-//     break;
+} // end of while loop
 
-// }
+
+/* ------------------ Part 3: Feeling Loopy ------------------ */
+console.log(`/* ------------------ Part 3: Feeling Loopy ------------------ */`);
