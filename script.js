@@ -56,21 +56,39 @@ console.log(`/* ------------------ Part 2: Prime Time ------------------ */`);
     Test your loop with higher numbers and reference an online prime number table to determine the accuracy of your code.
     Be careful! If you set n to a number too large, your loop could take a long time to process.*/
 
-let n = 7;
-
-// let j = 0;
+let n = 5;
 let nplus = n + 1;
-do{
-    if(n % 2 != 0 && n % 3 !== 0){
+while(n > 1){
+    
+    if(n === 2 || n === 3){
+        console.log(`${n} is prime too`);
+    }
+    else if(n % 2 !== 0 && n % 3 !== 0){
         console.log(`${n} is prime`);
-        break;
+        nplus++;
     }
     n++;
 }
-while(n > 0){
-    if(nplus % 2 != 0 && nplus % 3 !== 0){
-        console.log(`${nplus} is prime`);
-        
-    }
-    nplus++;
-}
+
+
+// while(nplus > 0){
+//     if(nplus % 2 != 0 && nplus % 3 !== 0){
+//         console.log(`${nplus} is prime`);
+//         break;
+//     }
+//     nplus++;
+// }
+
+// for(let n = 4; n > 1; n++){
+//     if(n % 2 !== 0 && n % 3 !== 0){
+//         console.log(`${n} is prime`);
+//     }
+//     else if(n === 2 || n == 3){
+//         console.log(`${n} is prime as well`);
+//     }
+//     else{
+//         console.log(`${n} is not prime`);
+//     }
+//     break;
+
+// }
