@@ -120,60 +120,15 @@ for (; i < str.length; i++) {
 
     // encountering the newline escape character
 	if (str[i] === '\n') {
-		// continue;
-        // console.log(` `);
-        // halts the loop completely
-        // console.log(i);
-        // row = "";
-        // for(let k = i + 1; k < str.length - i; k++){
-        //     if(str[k] === '\n'){
-        //         console.log(row);
-        //         break;
-        //     }
-        //     else{
-        //         row += str[k];
-        //     }
 
-        // }
-        //console.log(row);
         break;
 	}
 
     else{
         row += str[i];
     }
-    // else if(c == ","){
-    //     comma_counter++;
 
-    // }
-    // if character not comma or '\n'
-    // else if(c !== ','){
-    //     row += c; // append each character preceding the '\n' into variable row
-        
-    // }
-    // // if character is a comma
-    // else{
-    //     continue;
-    //     // row += cell1;
-    //     // cell1 === "";
-    // }
-    // iterating through the characters in row
-    // for(let j = 0; j < row.length; j++){
-    //     if(row[j] !== ','){
-    //         cell1 + row[j];
-    //     }
-    //     else{
-    //         j === 0;
-    //         row
-    //     }
-
-    // }
-    
-
-	// console.log(c);
-    // console.log(row);
 }
-
 console.log(row);
 let j = 0;
 while(j < row.length){
@@ -226,7 +181,7 @@ console.log(j);
 
 console.log(cell1, cell2, cell3, cell4);
 
-console.log(i);
+//console.log(i);
 
 // copy pasta of the code block above ----- it will work but what if string is bigger(more rows)? dynamic sizing req.
 // requires counting "\n" to get number of rows -- while loop, for-of loop
@@ -245,29 +200,3 @@ for(; k < str.length - i; k++){
     }
 
 }
-
-// for(let j = 0; j < row.length; j++){
-//     if(row[j] === ','){
-//         comma_counter++;
-//         break;
-//         // for(let k = j; k < row.length; k++){
-//         //     if(row[k] === ','){
-//         //         comma_counter++;
-                
-//         //     }
-//         //     else{
-//         //         cell2 += row[k];
-//         //     }
-//         // }
-//     }
-//     // if not a comma
-//     else{ // append char to cell1
-//         cell1 += row[j];
-//         j++;
-//     }
-// }
-
-// console.log(str[0]);
-
-// let text = "Hello\rWorld";
-// console.log(text);
