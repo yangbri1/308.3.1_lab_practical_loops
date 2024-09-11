@@ -58,34 +58,106 @@ console.log(`/* ------------------ Part 2: Prime Time ------------------ */`);
 
 
 // intialize variable for later use in the while loop
-let n = 3;
+// let n = 3;
 
-// iterate via loop as long as the integer is non-negative 
-while(n > 0){
+// // iterate via loop as long as the integer is non-negative 
+// while(n > 0){
 
-    // declare 'nplus' variable to check on closest number above 'n'
-    let nplus = n + 1;
+//     // declare 'nplus' variable to check on closest number above 'n'
+//     let nplus = n + 1;
 
-    // if n is integers 2 or 3
-    if(nplus === 2 || nplus == 3){
-        // logs out it's a prime
-        console.log(`${nplus} isA prime`);
-        // breaks out out whole loop completely -- next iteration DN start
-        break;
-    }
-    // if n is a multiple of 2, 3, 5, 7, ... 11, 13, 17, 19, 23, ... (prime)
-    else if((nplus % 2 != 0) && (nplus % 3 !== 0) && (nplus % 5 !== 0) && (nplus % 7 !== 0)){
-        // log out confirming n is a prime
-        console.log(`${nplus} isB prime`);
-        // break current iteration 
-        break;
+//     // if n is integers 2 or 3
+//     if(nplus === 2 || nplus == 3){
+//         // logs out it's a prime
+//         console.log(`${nplus} isA prime`);
+//         // breaks out out whole loop completely -- next iteration DN start
+//         break;
+//     }
+//     // if n is a multiple of 2, 3, 5, 7, ... 11, 13, 17, 19, 23, ... (prime)
+//     else if((nplus % 2 != 0) && (nplus % 3 !== 0) && (nplus % 5 !== 0) && (nplus % 7 !== 0)){
+//         // log out confirming n is a prime
+//         console.log(`${nplus} isB prime`);
+//         // break current iteration 
+//         break;
     
-    }
-    // increment up by 1 if neither of the if cases are hit
-    n++;
+//     }
+//     // increment up by 1 if neither of the if cases are hit
+//     n++;
 
-} // end of while loop
+// } // end of while loop
 
 
 /* ------------------ Part 3: Feeling Loopy ------------------ */
 console.log(`/* ------------------ Part 3: Feeling Loopy ------------------ */`);
+
+/* Objective: Your task is to write a script that accomplishes the following:
+    Loop through the characters of a given CSV string.
+    Store each “cell” of data in a variable.
+    When you encounter a comma, move to the next cell.
+    When you encounter the “\r\n” sequence, move to the next “row.”
+    Log each row of data.
+    
+    You do not need to format the data, the following works well.
+        console.log(cell1, cell2, cell3, cell4);
+    There will only be 4 cells per row.
+    There will be no escaped characters other than “\n” */
+
+const str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz
+Master,58\n98,Bill,Doctor’s Assistant,26`; // backticks disregards escape characters
+
+let row = "";
+
+let cell1 = "" //, cell2, cell3, cell4;
+let c1_spot, c2_spot, c3_spot, c4_spot;
+let comma_counter = 0;
+
+// loop through the given string character by character
+for (const c of str) {
+
+    // encountering the newline escape character
+	if (c === '\n') {
+		// continue;
+        // console.log(` `);
+        // halts the loop completely
+        break;
+	}
+    // else if(c == ","){
+    //     comma_counter++;
+
+    // }
+    // if character not comma or '\n'
+    else if(c !== ','){
+        row += c; // append each character preceding the '\n' into variable row
+        
+    }
+    // if character is a comma
+    else{
+        continue;
+        // row += cell1;
+        // cell1 === "";
+    }
+    // iterating through the characters in row
+    // for(let j = 0; j < row.length; j++){
+    //     if(row[j] !== ','){
+    //         cell1 + row[j];
+    //     }
+    //     else{
+    //         j === 0;
+    //         row
+    //     }
+
+    // }
+    
+
+	// console.log(c);
+    // console.log(row);
+}
+
+console.log(row);
+for(let j = 0; j < row.length; j++){
+    
+}
+// console.log(str[0]);
+
+// let text = "Hello\rWorld";
+// console.log(text);
