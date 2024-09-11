@@ -228,8 +228,14 @@ console.log(cell1, cell2, cell3, cell4);
 
 console.log(i);
 
+// copy pasta of the code block above ----- it will work but what if string is bigger(more rows)? dynamic sizing req.
+// requires counting "\n" to get number of rows -- while loop, for-of loop
+// cache a row into an empty str --- like above 
+// iterate via the row while, caching char to each cell while delinating via commas
+
 row = "";
-for(let k = i + 1; k < str.length - i; k++){
+let k = i + 1
+for(; k < str.length - i; k++){
     if(str[k] === '\n'){
         console.log(row);
         break;
