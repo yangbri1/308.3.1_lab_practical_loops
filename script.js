@@ -107,7 +107,10 @@ Master,58\n98,Bill,Doctor’s Assistant,26`; // backticks disregards escape char
 
 let row = "";
 
-let cell1 = "" //, cell2, cell3, cell4;
+let cell1 = "";
+let cell2 = "";
+let cell3 = "";
+let cell4 = "";
 let c1_spot, c2_spot, c3_spot, c4_spot;
 let comma_counter = 0;
 
@@ -121,21 +124,25 @@ for (const c of str) {
         // halts the loop completely
         break;
 	}
+
+    else{
+        row += c;
+    }
     // else if(c == ","){
     //     comma_counter++;
 
     // }
     // if character not comma or '\n'
-    else if(c !== ','){
-        row += c; // append each character preceding the '\n' into variable row
+    // else if(c !== ','){
+    //     row += c; // append each character preceding the '\n' into variable row
         
-    }
-    // if character is a comma
-    else{
-        continue;
-        // row += cell1;
-        // cell1 === "";
-    }
+    // }
+    // // if character is a comma
+    // else{
+    //     continue;
+    //     // row += cell1;
+    //     // cell1 === "";
+    // }
     // iterating through the characters in row
     // for(let j = 0; j < row.length; j++){
     //     if(row[j] !== ','){
@@ -154,9 +161,78 @@ for (const c of str) {
 }
 
 console.log(row);
-for(let j = 0; j < row.length; j++){
-    
+let j = 0;
+while(j < row.length){
+    if(row[j] === ','){
+        j++;
+        break;
+    }
+    else{
+        cell1 += row[j];
+    }
+    j++;
 }
+
+console.log(cell1);
+console.log(j);
+
+while(j < row.length){
+    if(row[j] === ','){
+        j++;
+        break;
+    }
+    else{
+        cell2 += row[j];
+    }
+    j++;
+}
+console.log(cell2);
+console.log(j);
+
+while(j < row.length){
+    if(row[j] === ','){
+        break;
+    }
+    else{
+        cell3 += row[j];
+    }
+    j++;
+}
+console.log(cell3);
+console.log(j);
+
+while(j < row.length){
+    if(row[j] !== ','){
+        cell4 += row[j];
+    }
+    j++;
+}
+console.log(cell4);
+console.log(j);
+
+console.log(cell1, cell2, cell3, cell4);
+
+// for(let j = 0; j < row.length; j++){
+//     if(row[j] === ','){
+//         comma_counter++;
+//         break;
+//         // for(let k = j; k < row.length; k++){
+//         //     if(row[k] === ','){
+//         //         comma_counter++;
+                
+//         //     }
+//         //     else{
+//         //         cell2 += row[k];
+//         //     }
+//         // }
+//     }
+//     // if not a comma
+//     else{ // append char to cell1
+//         cell1 += row[j];
+//         j++;
+//     }
+// }
+
 // console.log(str[0]);
 
 // let text = "Hello\rWorld";
