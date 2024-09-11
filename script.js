@@ -115,18 +115,32 @@ let c1_spot, c2_spot, c3_spot, c4_spot;
 let comma_counter = 0;
 
 // loop through the given string character by character
-for (const c of str) {
+let i = 0
+for (; i < str.length; i++) {
 
     // encountering the newline escape character
-	if (c === '\n') {
+	if (str[i] === '\n') {
 		// continue;
         // console.log(` `);
         // halts the loop completely
+        // console.log(i);
+        // row = "";
+        // for(let k = i + 1; k < str.length - i; k++){
+        //     if(str[k] === '\n'){
+        //         console.log(row);
+        //         break;
+        //     }
+        //     else{
+        //         row += str[k];
+        //     }
+
+        // }
+        //console.log(row);
         break;
 	}
 
     else{
-        row += c;
+        row += str[i];
     }
     // else if(c == ","){
     //     comma_counter++;
@@ -211,6 +225,20 @@ console.log(cell4);
 console.log(j);
 
 console.log(cell1, cell2, cell3, cell4);
+
+console.log(i);
+
+row = "";
+for(let k = i + 1; k < str.length - i; k++){
+    if(str[k] === '\n'){
+        console.log(row);
+        break;
+    }
+    else{
+        row += str[k];
+    }
+
+}
 
 // for(let j = 0; j < row.length; j++){
 //     if(row[j] === ','){
