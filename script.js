@@ -114,72 +114,116 @@ let cell4 = "";
 let c1_spot, c2_spot, c3_spot, c4_spot;
 let comma_counter = 0;
 
-// loop through the given string character by character
-let i = 0
-for (; i < str.length; i++) {
 
-    // encountering the newline escape character
-	if (str[i] === '\n') {
+for(let i = 0; i < str.length; i++){
 
-        break;
-	}
-
-    else{
+    // gets charaters up to newline 
+    if(str[i] !== '\n'){
         row += str[i];
     }
 
+    for(let j = 0; j < row.length; j++){
+        if(row[j] !== ','){
+            cell1 += row[j];
+        }
+        else{
+            cell2 = cell1;
+            
+            break;
+        }
+        
+    }
+    // else{
+    //     break;
+    // }
+    // console.log(row);
+    
+    // else if(str[i] === ','){
+    //     cell2 = cell1;
+    //     // console.log(cell2);
+    //     cell3 = cell2;
+    //     cell4 = cell3;
+    // }
+    // else if(str[i] === '\n'){
+    //     console.log(cell4);
+    //     break;
+    // }
+    
 }
+//console.log(cell2);
+// console.log(cell1);
 console.log(row);
-let j = 0;
-while(j < row.length){
-    if(row[j] === ','){
-        j++;
-        break;
-    }
-    else{
-        cell1 += row[j];
-    }
-    j++;
-}
 
-console.log(cell1);
-console.log(j);
+// loop through the given string character by character
+// let i = 0
+// for (; i < str.length; i++) {
 
-while(j < row.length){
-    if(row[j] === ','){
-        j++;
-        break;
-    }
-    else{
-        cell2 += row[j];
-    }
-    j++;
-}
-console.log(cell2);
-console.log(j);
+//     // encountering the newline escape character
+// 	if (str[i] === '\n') {
 
-while(j < row.length){
-    if(row[j] === ','){
-        break;
-    }
-    else{
-        cell3 += row[j];
-    }
-    j++;
-}
-console.log(cell3);
-console.log(j);
+//         break;
+// 	}
 
-while(j < row.length){
-    if(row[j] !== ','){
-        cell4 += row[j];
-    }
-    j++;
-}
-console.log(cell4);
-console.log(j);
+//     else{
+//         row += str[i];
+//     }
 
-console.log(cell1, cell2, cell3, cell4);
+// }
+// console.log(row);
+// let j = 0;
+// while(j < row.length){
+//     if(row[j] === ','){
+//         j++;
+//         break;
+//     }
+//     else{
+//         cell1 += row[j];
+//     }
+//     j++;
+// }
+// function getCell(row){
+//     return(6 * 5);
+// }
+// console.log(getCell(row))
+
+// console.log(cell1);
+// console.log(j);
+
+// while(j < row.length){
+//     if(row[j] === ','){
+//         j++;
+//         break;
+//     }
+//     else{
+//         cell2 += row[j];
+//     }
+//     j++;
+// }
+// console.log(cell2);
+// console.log(j);
+
+// while(j < row.length){
+//     if(row[j] === ','){
+//         break;
+//     }
+//     else{
+//         cell3 += row[j];
+//     }
+//     j++;
+// }
+// console.log(cell3);
+// console.log(j);
+
+// while(j < row.length){
+//     if(row[j] !== ','){
+//         cell4 += row[j];
+//     }
+//     j++;
+// }
+// console.log(cell4);
+// console.log(j);
+
+// console.log(cell1, cell2, cell3, cell4);
 
 //console.log(i);
 
@@ -188,15 +232,16 @@ console.log(cell1, cell2, cell3, cell4);
 // cache a row into an empty str --- like above 
 // iterate via the row while, caching char to each cell while delinating via commas
 
-row = "";
-let k = i + 1
-for(; k < str.length - i; k++){
-    if(str[k] === '\n'){
-        console.log(row);
-        break;
-    }
-    else{
-        row += str[k];
-    }
+// row = "";
+// let k = i + 1
+// for(; k < str.length - i; k++){
+//     if(str[k] === '\n'){
+//         console.log(row);
+//         break;
+//     }
+//     else{
+//         row += str[k];
+//     }
 
-}
+// }
+
