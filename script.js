@@ -107,6 +107,7 @@ Master,58\n98,Bill,Doctor’s Assistant,26`; // backticks disregards escape char
 
 let row = "";
 
+let cell = "";
 let cell1 = "";
 let cell2 = "";
 let cell3 = "";
@@ -115,79 +116,105 @@ let c1_spot, c2_spot, c3_spot, c4_spot;
 let comma_counter = 0;
 
 
-for(let i = 0; i < str.length; i++){
+// for(let i = 0; i < str.length; i++){
 
-    // gets charaters up to newline 
-    if(str[i] !== '\n'){
-        row += str[i];
-    }
-    // else if()
-    else{
-        // row += '\r';
-        break;
-    }
-
-}
-console.log(row);
-
-for(let j = 0; j < row.length; j++){
-    if(row[j] !== ','){
-        cell1 += row[j];
-    }
-    else{
-        if(cell2 === ""){
-            cell2 === cell1;
-            j++;
-            continue;
-        }
-        else if(cell3 === ""){
-            cell3 === cell1;
-            j++;
-            continue;
-        }
-        else if(cell4 === ""){
-            cell4 === cell1;
-            j++;
-            continue;
-        }
-        
-    }
-}
-console.log(cell1);
-
-// loop through the given string character by character
-// let i = 0
-// for (; i < str.length; i++) {
-
-//     // encountering the newline escape character
-// 	if (str[i] === '\n') {
-
-//         break;
-// 	}
-
-//     else{
+//     // gets charaters up to newline 
+//     if(str[i] !== '\n'){
 //         row += str[i];
+//     }
+//     // else if()
+//     else{
+//         // row += '\r';
+//         break;
 //     }
 
 // }
 // console.log(row);
-// let j = 0;
-// while(j < row.length){
-//     if(row[j] === ','){
-//         j++;
-//         break;
-//     }
-//     else{
+
+// for(let j = 0; j < row.length; j++){
+//     if(row[j] !== ','){
 //         cell1 += row[j];
 //     }
-//     j++;
+//     else{
+//         if(cell2 === ""){
+//             cell2 === cell1;
+//             j++;
+//             continue;
+//         }
+//         else if(cell3 === ""){
+//             cell3 === cell1;
+//             j++;
+//             continue;
+//         }
+//         else if(cell4 === ""){
+//             cell4 === cell1;
+//             j++;
+//             continue;
+//         }
+        
+//     }
 // }
-// function getCell(row){
-//     return(6 * 5);
-// }
-// console.log(getCell(row))
-
 // console.log(cell1);
+
+// loop through the given string character by character
+let i = 0
+
+function grab_line(i, row){
+    for (; i < str.length; i++) {
+        // encountering the newline escape character
+        if (str[i] === '\n') {
+            break;
+            
+        }
+        else{
+            row += str[i];
+        }
+    
+    }
+    return row;
+}
+// row = grab_line(i, row);
+// i += row.length;
+// console.log(i, row);
+
+// NOTICE: Decided to use a while loop so the ITERATOR could be used in later while loops
+//         as in saves the index in place 
+function make_cells(row, cell1, cell2, cell3, cell4){
+    let j = 0;
+    while(j < row.length){
+        if(row[j] === ','){
+
+            if(cell2 === ""){
+                cell2 = cell1;
+            }
+            else if(cell3 === ""){
+                cell3 = cell1;
+            }
+            else if(cell4 === ""){
+                cell4 = cell1;
+            }
+            cell1 = "";
+        }
+        else{
+            cell1 += row[j];
+        }
+        j++;
+    }
+    return(console.log(cell2, cell3, cell4, cell1));
+}
+
+row = grab_line(i, row);
+i += row.length;
+console.log(i, row);
+make_cells(row, cell1, cell2, cell3, cell4);
+
+
+// cell1 is last as it passed the values to the others first
+//console.log(cell2, cell3, cell4, cell1); 
+
+
+// --------------------------------------------------------------------------
+// //console.log(cell1);
 // console.log(j);
 
 // while(j < row.length){
@@ -200,7 +227,7 @@ console.log(cell1);
 //     }
 //     j++;
 // }
-// console.log(cell2);
+// //console.log(cell2);
 // console.log(j);
 
 // while(j < row.length){
@@ -212,7 +239,7 @@ console.log(cell1);
 //     }
 //     j++;
 // }
-// console.log(cell3);
+// //console.log(cell3);
 // console.log(j);
 
 // while(j < row.length){
@@ -221,12 +248,12 @@ console.log(cell1);
 //     }
 //     j++;
 // }
-// console.log(cell4);
+// //console.log(cell4);
 // console.log(j);
 
 // console.log(cell1, cell2, cell3, cell4);
 
-//console.log(i);
+// console.log(i);
 
 // copy pasta of the code block above ----- it will work but what if string is bigger(more rows)? dynamic sizing req.
 // requires counting "\n" to get number of rows -- while loop, for-of loop
