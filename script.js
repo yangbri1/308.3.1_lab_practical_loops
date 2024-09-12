@@ -102,8 +102,7 @@ console.log(`/* ------------------ Part 3: Feeling Loopy ------------------ */`)
     There will only be 4 cells per row.
     There will be no escaped characters other than “\n” */
 
-const str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz
-Master,58\n98,Bill,Doctor’s Assistant,26`; // backticks disregards escape characters
+const str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`; // backticks disregards escape characters
 
 let row = "";
 
@@ -173,6 +172,8 @@ function grab_line(i, row){
     }
     return row;
 }
+// console.log(i);
+
 // row = grab_line(i, row);
 // i += row.length;
 // console.log(i, row);
@@ -181,10 +182,13 @@ function grab_line(i, row){
 //         as in saves the index in place 
 function make_cells(row, cell1, cell2, cell3, cell4){
     let j = 0;
+    // traverse through the line
     while(j < row.length){
+        // if the delimiter comma were to be found
         if(row[j] === ','){
-
+            // check if the other cells are empty
             if(cell2 === ""){
+                // if so copy the current data onto the empty ones
                 cell2 = cell1;
             }
             else if(cell3 === ""){
@@ -193,20 +197,71 @@ function make_cells(row, cell1, cell2, cell3, cell4){
             else if(cell4 === ""){
                 cell4 = cell1;
             }
+            // empty out the current cell for next iteration
             cell1 = "";
         }
+        // if the character is NOT a comma, append it to a cell
         else{
             cell1 += row[j];
         }
+        // increment for the loop to operate
         j++;
     }
+    // returns the results in console.log() form
     return(console.log(cell2, cell3, cell4, cell1));
 }
 
+// row = grab_line(i, row);
+// //i += row.length;
+// //console.log(i, row);
+// make_cells(row, cell1, cell2, cell3, cell4);
+// i += row.length;
+// // console.log(i);
+// // console.log(row);
+
+// reassigning the row to empty string in preparation for next line input
+row = " ";
+// execute grab_line(i, row) function w/ two parameters to take characters upt to a '\n'
+// cache the trimmed string into variable "row"
 row = grab_line(i, row);
-i += row.length;
-console.log(i, row);
+//console.log(i, row);
+// execute make_cells function w/ the previous found row results and cells as parameters
 make_cells(row, cell1, cell2, cell3, cell4);
+// account for the number of characters in the last string -- update row index for next grab_line function call
+i += row.length;
+// console.log(i);
+
+row = " ";
+row = grab_line(i, row);
+//console.log(i, row);
+make_cells(row, cell1, cell2, cell3, cell4);
+i += row.length;
+
+row = " ";
+row = grab_line(i, row);
+//console.log(i, row);
+make_cells(row, cell1, cell2, cell3, cell4);
+i += row.length;
+
+row = " ";
+row = grab_line(i, row);
+//console.log(i, row);
+make_cells(row, cell1, cell2, cell3, cell4);
+i += row.length;
+
+row = " ";
+row = grab_line(i, row);
+//console.log(i, row);
+make_cells(row, cell1, cell2, cell3, cell4);
+i += row.length;
+
+row = " ";
+row = grab_line(i, row);
+//console.log(i, row);
+make_cells(row, cell1, cell2, cell3, cell4);
+i += row.length;
+
+
 
 
 // cell1 is last as it passed the values to the others first
