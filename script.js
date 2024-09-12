@@ -121,38 +121,39 @@ for(let i = 0; i < str.length; i++){
     if(str[i] !== '\n'){
         row += str[i];
     }
+    // else if()
+    else{
+        // row += '\r';
+        break;
+    }
 
-    for(let j = 0; j < row.length; j++){
-        if(row[j] !== ','){
-            cell1 += row[j];
+}
+console.log(row);
+
+for(let j = 0; j < row.length; j++){
+    if(row[j] !== ','){
+        cell1 += row[j];
+    }
+    else{
+        if(cell2 === ""){
+            cell2 === cell1;
+            j++;
+            continue;
         }
-        else{
-            cell2 = cell1;
-            
-            break;
+        else if(cell3 === ""){
+            cell3 === cell1;
+            j++;
+            continue;
+        }
+        else if(cell4 === ""){
+            cell4 === cell1;
+            j++;
+            continue;
         }
         
     }
-    // else{
-    //     break;
-    // }
-    // console.log(row);
-    
-    // else if(str[i] === ','){
-    //     cell2 = cell1;
-    //     // console.log(cell2);
-    //     cell3 = cell2;
-    //     cell4 = cell3;
-    // }
-    // else if(str[i] === '\n'){
-    //     console.log(cell4);
-    //     break;
-    // }
-    
 }
-//console.log(cell2);
-// console.log(cell1);
-console.log(row);
+console.log(cell1);
 
 // loop through the given string character by character
 // let i = 0
